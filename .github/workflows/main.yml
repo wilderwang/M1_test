@@ -9,7 +9,7 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name: Build
+    - name: Run unit tests
       run: |
         set -o pipefail && xcodebuild clean build -workspace ShadowsocksX-NG.xcworkspace -scheme ShadowsocksX-NG|xcpretty
     - name: Upload the build
