@@ -13,7 +13,7 @@ jobs:
       run: |
         set -o pipefail && xcodebuild -list -workspace ShadowsocksX-NG.xcworkspace
         xcodebuild -list -project ShadowsocksX-NG.xcodeproj
-        xcodebuild clean build -workspace ShadowsocksX-NG.xcworkspace -scheme ShadowsocksX-NG|xcpretty
+        xcodebuild clean build -workspace ShadowsocksX-NG.xcworkspace -configuration Release -scheme ShadowsocksX-NG|xcpretty
     - uses: actions/upload-artifact@v3
       with:
         name: my-artifact
