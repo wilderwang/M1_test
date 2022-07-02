@@ -8,14 +8,11 @@ jobs:
     runs-on: macos-10.15
     
     steps:
-    - name: Checkout  
-      - uses: actions/checkout@v1
+    - uses: actions/checkout@v1
     - name: Run unit tests
       run: |
         set -o pipefail && xcodebuild clean build -workspace ShadowsocksX-NG.xcworkspace -scheme ShadowsocksX-NG|xcpretty
-
-    - name: Upload the build
-      - uses: actions/upload-artifact@v3
-        with:
-          name: my-artifact
-          path: /
+    - uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact
+        path: /
